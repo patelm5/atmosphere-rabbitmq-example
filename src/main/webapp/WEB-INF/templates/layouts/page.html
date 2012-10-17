@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+<head>
+	<title tiles:substituteBy="header">
+		Thymeleaf Async Example (Prototype)
+	</title>
+</head>
+<body th:inline="text">
+		
+	<div tiles:substituteBy="topBar"></div>
+	<header tiles:substituteBy="banner" class="jumbotron subhead" id="overview">
+	  <div class="container">
+	  	<div>
+	  		<h1>Spring Example</h1> 
+	  		<img th:src="@{/resources/images/logo_sts_new.png}"/>
+	  	</div>
+	   
+	   <p class="lead">Spring social, async and thymeleaf example.</p>
+	  </div>
+	</header>
+	<div tiles:substituteBy="content" class="container large-space-on-top">
+		<div id="midCol" class="row well well-large">
+			<h1 class="large-space-underneath large-space-on-top">Get started by signing in with your twitter account!</h1>
+			<form th:action="@{/signin/twitter}" method="POST">
+				<button type="submit" class="btn btn-large btn-primary" >
+					<img th:src="@{/resources/images/twitter.png}"/> &nbsp; Sign in with Twitter 
+				</button>
+			</form>
+		</div>
+		<div id="rightcol" class="span2"></div>
+	</div>
+	
+</body>
+</html>

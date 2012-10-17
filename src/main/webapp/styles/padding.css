@@ -1,0 +1,19 @@
+.medium-space-on-top{
+	padding-top: 15px; 
+}
+
+.large-space-on-top{
+	padding-top: 30px; 
+}
+
+.medium-space-underneath{
+	padding-bottom: 15px; 
+}
+
+.large-space-underneath{
+	padding-bottom: 30px; 
+}
+
+.small-space-left{
+	margin-left:15px; 
+}

@@ -1,0 +1,35 @@
+<div class="container large-space-on-top">
+		<div id="midCol" class="row well well-large">
+			<h1 class="large-space-underneath large-space-on-top">Wait for some real time updates!</h1>
+			<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>By</th>
+								<th>Text</th>
+								<th>Received</th>
+							</tr>
+							
+						</thead>
+						
+						<tbody data-bind="foreach:model">
+							 <tr class="twitter-table-row">
+								<td data-bind="text:by"></td>
+								<td data-bind="text:text"></td>
+								<td data-bind="text: received"></td>
+							 </tr> 
+						</tbody>
+				</table>
+				
+			<form th:action="@{/atmosphere}" method="POST">
+				<button type="submit" class="btn btn-large btn-primary" > Say hello
+				</button>
+			</form>
+		</div>
+</div>
+
+<script th:inline="javascript"> 
+//<![CDATA[
+	var url = [[@{/atmosphere}]]
+	subscribe(url);
+//]]>
+</script>

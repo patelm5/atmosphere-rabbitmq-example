@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+ <tiles-definitions>
+     
+    
+    <definition name="page" templateExpression="/layouts/page" >
+    	<put-attribute name="header" value="/views/header"></put-attribute>
+    	<put-attribute name="topBar" value="/views/topBar"></put-attribute>
+    	<put-attribute name="banner" value="/views/banner"></put-attribute>
+	</definition>
+
+</tiles-definitions>

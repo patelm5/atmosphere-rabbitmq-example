@@ -1,0 +1,47 @@
+body {
+	background:url('../images/grey.png');
+	padding-top: 40px;
+	color: #8a8a8a;
+}
+
+
+.jumbotron {
+  padding: 40px 0;
+  margin: 0px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+background: #006e2e; /* Old browsers */
+background: -moz-linear-gradient(top,  #006e2e 0%, #477700 17%, #006e2e 99%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006e2e), color-stop(17%,#477700), color-stop(99%,#006e2e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #006e2e 0%,#477700 17%,#006e2e 99%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #006e2e 0%,#477700 17%,#006e2e 99%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #006e2e 0%,#477700 17%,#006e2e 99%); /* IE10+ */
+background: linear-gradient(to bottom,  #006e2e 0%,#477700 17%,#006e2e 99%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
+
+
+}
+.jumbotron h1 {
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  float: left; 
+}
+.jumbotron p {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 30px;
+  float: left ;
+}
+
+.jumbotron img {
+  float: right ;
+}
+
+.subhead {
+text-align: left;
+border-bottom: 1px solid #DDD;
+}
