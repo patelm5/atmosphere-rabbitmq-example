@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<rabbit:connection-factory id="connectionFactory" host="${rabbitmq.host:vm-dsportsdesk01}" port="${rabbitmq.port:5672}"
+	<rabbit:connection-factory id="connectionFactory" host="${rabbitmq.host:localhost}" port="${rabbitmq.port:5672}"
 		username="guest" password="guest" connection-factory="rcf" />
 
 		
