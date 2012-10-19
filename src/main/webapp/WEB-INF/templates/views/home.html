@@ -20,16 +20,10 @@
 						</tbody>
 				</table>
 				
-			<form th:action="@{/atmosphere}" method="POST">
-				<button type="submit" class="btn btn-large btn-primary" > Say hello
-				</button>
-			</form>
 		</div>
 </div>
 
 <script th:inline="javascript"> 
-//<![CDATA[
-	var url = [[@{/atmosphere}]]
-	subscribe(url);
-//]]>
+	var s = subscriber();
+	s.subscribe(); 
 </script>

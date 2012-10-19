@@ -10,7 +10,7 @@
 
 		
 	<bean id="rcf" class="com.rabbitmq.client.ConnectionFactory">
-    	<property name="host" value="${rabbitmq.host:vm-dsportsdesk01}"/>
+    	<property name="host" value="${rabbitmq.host:localhost}"/>
     	<property name="requestedHeartbeat" value="10" />
     </bean>
 

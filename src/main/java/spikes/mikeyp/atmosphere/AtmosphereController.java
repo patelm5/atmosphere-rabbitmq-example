@@ -1,46 +1,39 @@
 package spikes.mikeyp.atmosphere;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.BlockingQueue;
-
-import javax.annotation.Resource;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
-import org.atmosphere.annotation.Broadcast;
 import org.atmosphere.annotation.Suspend;
-import org.codehaus.jettison.json.JSONObject;
+import org.atmosphere.cpr.Broadcaster;
+import org.atmosphere.cpr.BroadcasterFactory;
+import org.atmosphere.jersey.Broadcastable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Configurable;
 
-@Configurable
+import com.sun.jersey.spi.resource.Singleton;
+
 @Path("/")
+@Singleton
+@Produces("application/json")
 public class AtmosphereController {
 
-	@Resource
-	public BlockingQueue<JSONObject> updateQueue;
+	private static final Broadcaster topic = BroadcasterFactory.getDefault().get("atmosphere"); 
+
+	
 
 	private static final Logger logger = LoggerFactory.getLogger(AtmosphereController.class);
 
 	@GET
-	@Suspend
-	public String subscribe() {
-		return "";
+	@Suspend(contentType = "application/json")
+	public Broadcastable subscribe() {
+		logger.info("a new browser subscribes"); 
+		return new Broadcastable(topic); 
 	}
 
-	@Broadcast(writeEntity = false)
-	@POST
-	public Map<String, Object> broadcast() {
-		Map<String,Object> model = new HashMap<String,Object> () ; 
-		model.put("by","mike"); 
-		model.put("text", "hi"); 
-		model.put("received","just now"); 
-		return model; 
+	public static Broadcaster getTopic() {
+		return topic;
 	}
-	
 
 
 }

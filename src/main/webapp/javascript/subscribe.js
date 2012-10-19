@@ -1,34 +1,42 @@
-function subscribe(url){
+function subscriber(){
 	
 	 var socket = $.atmosphere;
      var subSocket;
-     var request = { url : url,
-             transport: 'websocket',
-             trackMessageLength : true
-         };
-
      var self = this; 
-     self.model = ko.observableArray(); 	 
-  
-    	
-     request.onMessage = function (response) {
-             detectedTransport = response.transport;
-             if (response.status == 200) {
-                 var data = response.responseBody;
+     
+     var obj = {
+    		 
+    		 subscribe : function(){ 
+    			  var request = { url : document.location.toString()+'atmosphere/',
+    					     transport : 'websocket' ,
+    					     fallbackTransport: 'long-polling'
+    			         };
 
-                 try {
-                     var result = $.parseJSON(data);
+    			   
+    			     self.model = ko.observableArray(); 	 
+    			  
+    			    	
+    			     request.onMessage = function (response) {
+    			             detectedTransport = response.transport;
+    			             if (response.status == 200) {
+    			                 var data = response.responseBody;
 
-                     var i = 0;
-                     for (r in result) {
-                        self.model.push(r); 
-                     }
-                 } catch (err) {
-                     alert("Exception: " + err)
-                 }
-             }
-         };
+    			                 try {
+    			                     var result = $.parseJSON(data);
+    			                     self.model.push(result); 
+    			                     
+    			                 } catch (err) {
+    			                     alert("Exception: " + err)
+    			                 }
+    			             }
+    			         };
 
-         subSocket = socket.subscribe(request);
-         ko.applyBindings(self.model);
+    			         subSocket = socket.subscribe(request);
+    			         ko.applyBindings(self.model);
+    		 }
+     }
+     
+     return obj; 
+   
+         
 }
